@@ -51,8 +51,10 @@ Such as QuickBasic, Turbo Pascal and what not.
 
 Caveats
 ------
- - Won't work in [V86](https://en.wikipedia.org/wiki/Virtual_8086_mode) mode. That also means 
-   that it won't work if an EMS emulator is loaded or under you're running it from Windows.
+ - Won't work under [V86](https://en.wikipedia.org/wiki/Virtual_8086_mode) mode. That includes 
+    * If an EMS emulator is loaded
+    * Running it directly from Windows. Although, 64-bit windows doesn't support 
+      [Virtual DOS Machine/VDM](https://en.wikipedia.org/wiki/Virtual_DOS_machine) anyways... 
  - Instructions such as rep movs/stos only use 16 bit offsets in real mode.
  
 
@@ -65,7 +67,7 @@ To compile (using MASM 6.11 or higher)
 
 `ml gradient.asm`
 
-The most convenient wy to run is likely through [DOSBox](https://www.dosbox.com/). To launch
+The most convenient way to run is likely through [DOSBox](https://www.dosbox.com/). To launch
 in the DOS command prompt, type
 
 `gradient.com` 
