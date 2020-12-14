@@ -19,12 +19,12 @@ As illustrated by the figure below ([courtesy of](http://www.c-jump.com/CIS77/AS
 
 ![real-mode segmented memory model](doc/images/segments_n_offsets.png) 
 
-Using this segmented model you could in total access 1MB of memory in a very convoluted way. To 
-access any more than that you had to use memory banking where special hardware (i.e 
-[VESA Bios Extensions](https://web.archive.org/web/20120328134352/http://www.opferman.net/Text/svga.txt)) 
-or by using Expanded Memory Emulators [EMS](https://en.wikipedia.org/wiki/Expanded_memory).
+Using this segmented model you could in total access 1MB (out of which you could get to use ~620KB at best)
+of memory in a very convoluted way. To access any more than that you had to use hardware that could bank 
+its memory in the sub 1MB are i.e [VESA Bios Extensions](https://web.archive.org/web/20120328134352/http://www.opferman.net/Text/svga.txt)... 
+or by using and Expanded Memory Emulator ([EMS](https://en.wikipedia.org/wiki/Expanded_memory)).
 
-Those were the struggles faced by DOS programmers. On a 386 or better, it is possible to 
+Those were the struggles faced by DOS programmers. On a 386 or better, it was/is even possible to 
 use a 32 bit register as offset as demonstrated below. 
 
 ```nasm
@@ -41,30 +41,30 @@ use a 32 bit register as offset as demonstrated below.
 
 As long as your offset is within the range `0000:ffffh`, anything above that will cause 
 [general protection fault](https://en.wikipedia.org/wiki/General_protection_fault). Un-real 
-mode/big real mode hacks the CPU to let us any offset between 0-4GB without having to run
-actual 32-bit code in protected mode. Thereby letting us access the VBE linear frame buffer
-and anything that was never possible in real mode DOS.
+mode/big real mode hacks the CPU to let us use any offset between 0-4GB without having to run
+actual 32-bit code in protected mode. Thereby letting us access the VBE linear frame buffer (usually > 2GB+)
+and everything else that was never possible in real mode DOS.
 
-Any (probably) real-mode DOS programs/tools will (probably) still work without any issues. 
-For instance, QuickBasic, TurboPascal and what not.  
+Any real-mode DOS programs/tools will (probably) still work without any issues. 
+Such as QuickBasic, Turbo Pascal and what not.  
 
 Caveats
 ------
- - Won't work in [V86](https://en.wikipedia.org/wiki/Virtual_8086_mode) mode. That means EMS emulator 
-   is loaded or under Windows.
+ - Won't work in [V86](https://en.wikipedia.org/wiki/Virtual_8086_mode) mode. That also means 
+   that it won't work if an EMS emulator is loaded or under you're running it from Windows.
  - Instructions such as rep movs/stos only use 16 bit offsets in real mode.
  
 
 How to run
 ------
-For convenience gradient.asm is written in [MASM](https://en.wikipedia.org/wiki/Microsoft_Macro_Assembler) 
+For convenience [gradient.asm](src/gradient.asm) is written in [MASM](https://en.wikipedia.org/wiki/Microsoft_Macro_Assembler) 
 syntax but is easy to port to NASM/FASM. 
 
 To compile (using MASM 6.11 or higher)
 
 `ml gradient.asm`
 
-The most convenient wy to run would likely be through [DOSBox](https://www.dosbox.com/). To launch
+The most convenient wy to run is likely through [DOSBox](https://www.dosbox.com/). To launch
 in the DOS command prompt, type
 
 `gradient.com` 
