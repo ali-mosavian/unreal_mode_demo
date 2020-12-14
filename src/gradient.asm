@@ -20,7 +20,7 @@ enterUnrealM    proto   near
 
 ;;::::::::
 .code
-.startup:
+.startup
 main            proc    near
                 local   vdo_mode_no: word,\
                         vdo_mode_info: VBE2MIB
