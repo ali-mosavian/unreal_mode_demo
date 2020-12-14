@@ -15,9 +15,10 @@ like a big deal. So here follows a short history lesson of struggles of legacy P
 the mid 90s DOS was quite common still. Real-mode DOS ran in a horrendous memory model where data and 
 code were addressed using a segment and an offset. Within each segment you could address 64KB of data 
 using the offset `0000:ffffh`, however, the segments were also overlapping every 16 bytes (paragraph). 
-As illustrated by the figure below ([courtesy of](http://www.c-jump.com/CIS77/ASM/Memory/lecture.html)). 
+As illustrated by the figure below. 
 
-![real-mode segmented memory model](doc/images/segments_n_offsets.png) 
+![real-mode segmented memory model](doc/images/segments_n_offsets.png)<br> 
+[Courtesy of [CIS-77 course at Bristol Community College](http://www.c-jump.com/CIS77/ASM/Memory/lecture.html) ] 
 
 Using this segmented model you could in total access 1MB (out of which you could get to use ~620KB at best)
 of memory in a very convoluted way. To access any more than that you had to use hardware that could bank 
