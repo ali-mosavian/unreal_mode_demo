@@ -627,7 +627,7 @@ a20_enable      endp
 
 
 ;;::::::::
-msg$alreadyInPmode      db "Error: Processor already in protected mode - exiting", 0ah, 0dh, 0
+msg$alreadyInPmode      db "Error: CPU already in protected mode", 0ah, 0dh, 0
 msg$vbeGetMIBFail       db "Error: Failed to get VESA mode info", 0ah, 0dh, 0
 msg$vbeSetModeFail      db "Error: Failed to set VESA mode", 0ah, 0dh, 0        
 msg$vbe_no_match        db "Error: Could not find requested mode", 0ah, 0dh, 0 
