@@ -1,11 +1,10 @@
-        .model tiny, pascal
-        .586p
-        .stack 800h
-        option proc: private
+                .model tiny, pascal
+                .586p
+                option proc: private
 
-        include vdo.inc
-        include vbe.inc
-        include gdt.inc
+                include vdo.inc
+                include vbe.inc
+                include gdt.inc
 
 
 ;;::::::::
