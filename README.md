@@ -54,7 +54,7 @@ Caveats
  - Won't work under [V86](https://en.wikipedia.org/wiki/Virtual_8086_mode) mode. That includes 
     * If an EMS emulator is loaded
     * Running it directly from Windows. Although, 64-bit windows doesn't support 
-      [Virtual DOS Machine/VDM](https://en.wikipedia.org/wiki/Virtual_DOS_machine) anyways... 
+      [Virtual DOS Machine (VDM)](https://en.wikipedia.org/wiki/Virtual_DOS_machine) anyways... 
  - Instructions such as rep movs/stos only use 16 bit offsets in real mode.
  
 
