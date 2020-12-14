@@ -21,7 +21,7 @@ As illustrated by the figure below ([courtesy of](http://www.c-jump.com/CIS77/AS
 
 Using this segmented model you could in total access 1MB (out of which you could get to use ~620KB at best)
 of memory in a very convoluted way. To access any more than that you had to use hardware that could bank 
-its memory in the sub 1MB are i.e [VESA Bios Extensions](https://web.archive.org/web/20120328134352/http://www.opferman.net/Text/svga.txt)... 
+its memory in the sub 1MB area (i.e [VESA Bios Extensions](https://web.archive.org/web/20120328134352/http://www.opferman.net/Text/svga.txt))... 
 or by using and Expanded Memory Emulator ([EMS](https://en.wikipedia.org/wiki/Expanded_memory)).
 
 Those were the struggles faced by DOS programmers. On a 386 or better, it was/is even possible to 
